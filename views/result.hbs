@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<title>Handwritten Digits Classifier</title>
+</head>
+<body>
+<h1>Classifier Result</h1>
+<img src="{{path}}" alt="">
+<ul>
+	{{#each classes}}
+		<li>Class {{class}} - confidence {{score}}</li>
+	{{/each}}
+</ul>
+<a href="/">Back</a>
+</body>
+</html>
