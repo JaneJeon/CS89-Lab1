@@ -12,12 +12,15 @@ const app = express()
   .post('/', upload.single('image'), async (req, res) => {
     const result = await visualRecognition.classify({
       images_file: fs.createReadStream(req.file.path),
-      classifier_ids: ["DefaultCustomModel_850992278"]
+      classifier_ids: ["DefaultCustomModel_850992278"],
+      threshold: 0
     })
 
     console.log(JSON.stringify(result, null, 2))
     res.render('result', {
-      classes: result.images[0].classifiers[0].classes,
+      classes: result.images[0].classifiers[0].classes.sort(
+        (a, b) => b.score - a.score
+      ),
       path: `images/${req.file.filename}`
     })
   })

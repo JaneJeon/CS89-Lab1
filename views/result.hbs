@@ -7,13 +7,26 @@
 	<title>Handwritten Digits Classifier</title>
 </head>
 <body>
-<h1>Classifier Result</h1>
-<img src="{{path}}" alt="">
-<ul>
-	{{#each classes}}
-		<li>Class {{class}} - confidence {{score}}</li>
-	{{/each}}
-</ul>
-<a href="/">Back</a>
+<div class="container">
+	<h1>Classifier Results</h1>
+	<img src="{{path}}" alt="" class="img-thumbnail" width="120px">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Class</th>
+				<th>Confidence (hi to low)</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each classes}}
+				<tr>
+					<td>{{class}}</td>
+					<td>{{score}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<a href="/">Back</a>
+</div>
 </body>
 </html>
