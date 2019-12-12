@@ -3,6 +3,12 @@
     "express": "^4.17.1",
     "hbs": "^4.0.4",
     "ibm-watson": "^4.4.0",
-    "multer": "^1.4.2"
-  }
+    "multer": "^1.4.2",
+    "snyk": "^1.258.2"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
